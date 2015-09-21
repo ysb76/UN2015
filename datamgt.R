@@ -3,24 +3,24 @@
 #MDG data downloaded from http://mdgs.un.org/unsd/mdg/Data.aspx
 MDGdat <- read.csv("Data/MDG_Export_20150829nf.csv", stringsAsFactors=FALSE)
 
-#INDICATORS IN MDG DATABASE
-#SeriesCode value in parentheses
-#Current contraceptive use by women - condom (60)
-#People living with HIV (67, 68, 69, LB, MP, UB)
-#HIV prevalence rate, 15-49 years old, in national based surveys (women=748, men=747)
-#AIDS deaths (797, 579, 798, LB, MP, UB)
-#HIV incidence rate (803, 801, 802, LB, MP, UB)
-#Condom use at last high-risk sex (women=735, men=734)
-#Condom use to overall contraceptive use in women (733)
-#Proportion of age 15-24 with comprehensive knowledge of HIV/AIDS (women=742, men=741)
+#INDICATORS IN MDG DATABASE (SeriesCode value in parentheses)
+#AIDS deaths (579)
 #AIDS orphans (622)
-#Antiretroviral therapy coverage for HIV-infected (805, 765, 804, LB, MP, UB)
-#Percentage of HIV-infected pregnant women with/ART (808, 806, 807, LB, MP, UB)
+#Condom use to overall contraceptive use among currently married women (733)
+#Condom use at last high-risk sex, 15-24 years old, men (734)
+#Condom use at last high-risk sex, 15-24 years old, women (735)
+#Men 15-24 with comprehensive correct knowledge of HIV/AIDS (741)
+#Women 15-14 with comprehensive correct knowledge of HIV/AIDS (742)
+#HIV prevalence rate, men 15-49 years old (747)
+#HIV prevalence rate, women 15-49 years old (748)
+#Antiretroviral therapy coverage among people with advanced HIV infection (765)
+#HIV incidence rate, 15-49 years old (801)
+#Percentage of HIV-infected women who received antiretroviral drugs to reduce transmission risk (806)
 
 
 #subset data to include only relevant variables
 MDGsub = MDGdat[MDGdat$SeriesCode %in% 
-                c(60, 68, 748, 747, 579, 801, 735, 734, 733, 742, 741, 622, 765, 806),]
+                c(579, 622, 733, 734, 735, 741, 742, 747, 748, 765, 801, 806),]
 
 #Keep cols with X1990, X1991, ... 
 years = paste("X", seq(1990, 2015), sep="")
