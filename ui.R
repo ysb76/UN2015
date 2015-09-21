@@ -14,7 +14,7 @@ dashboardPage(
                         
                         tabItems(
                                 
-                                tabItem(tabName="motion", h3("Goal 6a:  Combat and begin to reverse the spread of HIV/AIDS"),  
+                                tabItem(tabName="motion", h3("Goal 6A:  Combat and begin to reverse the spread of HIV/AIDS"),  
                                         fluidRow(
                                                 box(title="Global Trends", width="100%", status="primary", 
                                                     solidHeader=TRUE, collapsible=FALSE, htmlOutput("gvisMotion"))

@@ -100,6 +100,11 @@ MDGlong$Region[MDGlong$Country %in% c("American Samoa", "Cook Is", "Fiji",
 MDGlong$Region[grepl("Cook|Micronesia|Solomon|Mariana|Wallis", MDGlong$Country)] = "Oceania"
 
 
+#Create a second data frame that counts number of data measurements for each SeriesCode by CountryCode
+MDGcount = ddply(MDGlong, .(CountryCode, Country, SeriesCode, Series, Gender), 
+                 summarise, Count=sum( !is.na(Value) ) )
+
+
 #GET POPULATION DATA FROM http://esa.un.org/unpd/wpp/DVD/
 popn <- read.csv("Data/WPP2015_POP.csv", stringsAsFactors=FALSE)
 #Convert from wide to long format and create the variable "population"
